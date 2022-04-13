@@ -17,7 +17,7 @@ struct appButtons: View {
                 .foregroundColor(.blue)
             VStack {
                 Image(systemName: "heart.fill")
-                    .foregroundColor(.red)
+                    .foregroundColor(.blue)
                 images
                     .resizable()
                     .scaledToFit()

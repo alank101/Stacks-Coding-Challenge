@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @State var bookHeart = true
+    @State var musicHeart = true
+    @State var programmingHeart = true
     
     
     var body: some View {
@@ -20,21 +22,33 @@ struct ContentView: View {
                 Text("The quest for a blanced life")
                 HStack {
                     Button {
-                        
+                        bookHeart.toggle()
                     } label: {
-                        appButtons()
+                        if bookHeart {
+                            appButtons()
+                        } else {
+                            bookButton()
+                        }
                     }
                     Button {
-                        
+                        musicHeart.toggle()
                     } label: {
-                        appButtons(images: Image(systemName: "music.note.list"), mainText: "Music", subText: "listen, sing, dance")
+                        if musicHeart {
+                            appButtons(images: Image(systemName: "music.note.list"), mainText: "Music", subText: "listen, sing, dance")
+                        } else {
+                            musicButton(images: Image(systemName: "music.note.list"), mainText: "Music", subText: "listen, sing, dance")
+                        }
                     }
                 }
             }
             Button {
-                
+                programmingHeart.toggle()
             } label: {
-                appButtons(images: Image(systemName: "laptopcomputer"), mainText: "Programming", subText: "image, create, share, enjoy")
+                if programmingHeart {
+                    appButtons(images: Image(systemName: "laptopcomputer"), mainText: "Programming", subText: "image, create, share, enjoy")
+                } else {
+                    programmingButton(images: Image(systemName: "laptopcomputer"), mainText: "Programming", subText: "image, create, share, enjoy")
+                }
             }
             
         }.padding()

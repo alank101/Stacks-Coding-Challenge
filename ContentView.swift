@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var bookHeart = true
-    @State var musicHeart = true
-    @State var programmingHeart = true
+    @State var bookFavorite = true
+    @State var musicFavorite = true
+    @State var programmingFavorite = true
     
     
     var body: some View {
@@ -22,32 +22,32 @@ struct ContentView: View {
                 Text("The quest for a blanced life")
                 HStack {
                     Button {
-                        bookHeart.toggle()
+                        bookFavorite.toggle()
                     } label: {
-                        if bookHeart {
+                        if bookFavorite {
                             appButtons()
                         } else {
                             bookButton()
                         }
                     }
                     Button {
-                        musicHeart.toggle()
+                        musicFavorite.toggle()
                     } label: {
-                        if musicHeart {
+                        if musicFavorite {
                             appButtons(images: Image(systemName: "music.note.list"), mainText: "Music", subText: "listen, sing, dance")
                         } else {
-                            musicButton(images: Image(systemName: "music.note.list"), mainText: "Music", subText: "listen, sing, dance")
+                            musicButton()
                         }
                     }
                 }
             }
             Button {
-                programmingHeart.toggle()
+                programmingFavorite.toggle()
             } label: {
-                if programmingHeart {
-                    appButtons(images: Image(systemName: "laptopcomputer"), mainText: "Programming", subText: "image, create, share, enjoy")
+                if programmingFavorite {
+                    programmingButton()
                 } else {
-                    programmingButton(images: Image(systemName: "laptopcomputer"), mainText: "Programming", subText: "image, create, share, enjoy")
+                    programmingButtonHeart()
                 }
             }
             
